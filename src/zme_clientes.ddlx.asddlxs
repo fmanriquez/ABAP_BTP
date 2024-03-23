@@ -1,0 +1,37 @@
+@Metadata.layer: #CORE
+annotate view ZC_CLIENTES with
+{
+  @UI             :{
+     facet        : [{
+      id          : 'DetallesCliente',
+      label       : 'Cliente',
+      type        : #COLLECTION,
+      position    : 10},
+     {id          : 'Cliente',
+      parentId    : 'DetallesCliente',
+      label       : 'Detalles',
+      type        : #FIELDGROUP_REFERENCE,
+      targetQualifier: 'DetallesCliente',
+      position    : 10}]
+    }
+
+  //Id Cliente
+  @UI           :{
+    lineItem    :  [{ position: 10, importance: #HIGH, label: 'Código Cliente' }],
+    fieldGroup  :  [{ qualifier: 'DetallesCliente', position: 10}]}
+  IdCliente;
+
+  //Acceso
+  @UI           :{
+  lineItem      :  [{ position: 10, importance: #HIGH, label: 'Tipo Acceso' }],
+  fieldGroup    :  [{ qualifier: 'DetallesCliente', position: 10}]}
+  TipoAcceso;
+
+  //Email
+  @UI           :{
+  lineItem      :  [{ position: 10, importance: #HIGH, label: 'Email' }],
+  fieldGroup    :  [{ qualifier: 'DetallesCliente', position: 10}]}
+  Email;
+
+
+}
